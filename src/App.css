@@ -1,0 +1,244 @@
+/* ===== Global Setup ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #2c3e50;
+  overflow-x: hidden;
+  animation: gradientShift 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app {
+  max-width: 960px;
+  margin: auto;
+  padding: 30px 20px;
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px #00000030;
+  margin-bottom: 20px;
+}
+
+/* ===== Form Styling ===== */
+.student-form {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ffffff30;
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.student-form input,
+.student-form select {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.student-form input:focus,
+.student-form select:focus {
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.student-form input[type="file"] {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.student-form button {
+  background: linear-gradient(45deg, #00b894, #0984e3);
+  color: white;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.student-form button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(45deg, #6c5ce7, #00cec9);
+}
+
+/* ===== Template Switch ===== */
+.template-switch {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.template-switch label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.template-switch select {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  background-color: #dfe6e9;
+}
+
+/* ===== ID Card Styling ===== */
+.id-card {
+  margin-top: 30px;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  color: #2d3436;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  animation: popIn 1s ease-in-out;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.id-card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #6c5ce7;
+}
+
+.id-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+}
+
+.id-card .photo {
+  width: 120px;
+  height: 120px;
+  margin-top: 15px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #0984e3;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.id-card svg {
+  margin-top: 20px;
+  animation: fadeIn 1s ease;
+}
+
+.id-card button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  background-color: #fd79a8;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.id-card button:hover {
+  background-color: #e84393;
+  transform: scale(1.05);
+}
+
+/* ===== Template Variations ===== */
+.template1 {
+  border: 4px dashed #00cec9;
+}
+
+.template2 {
+  border: 4px solid #fd79a8;
+  background: #fbeaea;
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+
+  .id-card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .student-form input,
+  .student-form select {
+    font-size: 0.95rem;
+  }
+
+  .template-switch {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo {
+    width: 90px;
+    height: 90px;
+  }
+
+  .id-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .id-card p {
+    font-size: 0.9rem;
+  }
+
+  .id-card button {
+    font-size: 0.9rem;
+  }
+
+  .student-form {
+    padding: 15px;
+  }
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(102, 166, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(102, 166, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(102, 166, 255, 0);
+  }
+}
