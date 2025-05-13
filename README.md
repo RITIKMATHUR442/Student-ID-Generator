@@ -22,4 +22,4 @@ The goal was to design a smart and flexible student ID generator that feels mode
 - **Persistent Storage**: Used `localStorage` to keep past entries accessible.
 - **Export Functionality**: Enabled download so schools/parents can easily save or print the cards.
 
-Live Server  :https://admirable-dango-ea4cad.netlify.app/
+Live Server  : https://ids-card-generator.netlify.app/
